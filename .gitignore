@@ -1,0 +1,43 @@
+# Операционная система
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
+
+# Установленные пакеты / зависимости
+node_modules/
+vendor/
+
+# Файлы сборки / компиляции
+/dist/
+/build/
+/out/
+/target/
+
+# IDE и редакторы
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Файлы конфигурации окружения
+.env
+.env.local
+.env.*.local
+
+# Файлы временные, кэш
+*.tmp
+*.temp
+*.swp
+*.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Системные файлы
+*.bak
+*.old
+*.backup
