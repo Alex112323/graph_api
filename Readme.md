@@ -31,26 +31,28 @@ A FastAPI-based service for working with directed acyclic graphs (DAGs). Provide
 | `GET`  | `/api/graph/{graph_id}/adjacency_list` | Get adjacency list representation |
 | `GET`  | `/api/graph/{graph_id}/reverse_adjacency_list` | Get reverse adjacency list (transposed graph) |
 
-## Request/Response Examples
+## Быстрый старт
 
-### Create Graph
-```json
-POST /api/graph/
-Request Body:
-{
-  "nodes": [
-    {"name": "A"},
-    {"name": "B"},
-    {"name": "C"}
-  ],
-  "edges": [
-    {"source": "A", "target": "B"},
-    {"source": "B", "target": "C"}
-  ]
-}
+# 1. Clone repository
+```
+git clone https://github.com/Alex112323/graph_api.git
+cd graph-api
+```
 
-Response:
-{
-  "id": 1,
-  "message": "successful"
-}
+# 2. Copy .env.sample (and change)
+(Linux/macOS)
+```bash
+cp .env.sample .env
+```
+(Windows)
+```cmd
+copy .env.sample .env
+```
+# 3. Start service
+```
+docker-compose up -d --build
+```
+# 4. Test
+```
+docker-compose exec api pytest
+```

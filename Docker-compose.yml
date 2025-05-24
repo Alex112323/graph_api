@@ -1,26 +1,14 @@
 services:
-  init:
-    image: alpine:latest
-    volumes:
-      - shared_env:/shared
-      - .:/app
-    working_dir: /app
-    entrypoint: ["sh", "-c", "sh scripts/run.sh && cp -n .env.sample /shared/.env"]
-
-
   db:
     image: postgres:13
-    depends_on:
-      - init
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
-      - shared_env:/shared
       - postgres_data:/var/lib/postgresql/data
     working_dir: /shared
-    command: sh -c "cp -n .env .env.backup && docker-entrypoint.sh postgres"
+    command: sh -c "docker-entrypoint.sh postgres"
     ports:
       - "5433:5432"
     healthcheck:
@@ -51,5 +39,4 @@ services:
       start_period: 10s
 
 volumes:
-  shared_env:
   postgres_data:
