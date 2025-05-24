@@ -1,8 +1,8 @@
 from sqlalchemy import (
-    Column, Integer, String, ForeignKey, TIMESTAMP, Index, 
-    UniqueConstraint, CheckConstraint, text
+    Column, Integer, String, ForeignKey, Index, 
+    UniqueConstraint, CheckConstraint
 )
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 
