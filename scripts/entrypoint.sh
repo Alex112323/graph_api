@@ -9,7 +9,7 @@ done
 
 echo "База доступна, запускаем миграции..."
 
-alembic upgrade head
+alembic -c config/alembic.ini upgrade head
 
 echo "Запускаем основное приложение..."
 
